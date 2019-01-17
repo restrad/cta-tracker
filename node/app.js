@@ -1,5 +1,6 @@
 const request = require('request');
 const express = require('express');
+const train = require('./train');
 const app = express();
 
 app.use(express.static('public'));
@@ -33,11 +34,9 @@ app.get('/busstoparrivals', (req, res) => {
 app.get('/busfollow', (req, res) => {
 });
 
-app.get('/trainstops', (req, res) => {
-});
+app.get('/trainstops', train.stops);
 
-app.get('/strainfollow', (req, res) => {
-});
+app.get('/trainfollow', train.follow);
 
 app.listen(app.get('port'), () => {
   console.log('Node app is running on port', app.get('port'));
