@@ -15,4 +15,4 @@
 ### Train
 
 * GET train stop arrival times => ```/trainstops/?stop={stopId}```
-* GET train vehicle location and next stops (Follow train) => ``` /trainfollow/?vehicle={vehicleId}```
+* GET train vehicle location and next stops (Follow train) => ```/trainfollow/?vehicle={vehicleId}```
