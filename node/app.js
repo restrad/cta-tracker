@@ -13,12 +13,30 @@ app.use((req, res, next) => {
   req.method === 'OPTIONS' ? res.sendStatus(200) : next();
 });
 
-app.get('/cta', function (req, res) {
+app.get('/busroutes', (req, res) => {
   request('http://google.com', function (error, response, body) {
     console.log('error:', error); // Print the error if one occurred and handle it
     console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
     res.send(body);
   });
+});
+
+app.get('/busroutedirections', (req, res) => {
+});
+
+app.get('/busroutestops', (req, res) => {
+});
+
+app.get('/busstoparrivals', (req, res) => {
+});
+
+app.get('/busfollow', (req, res) => {
+});
+
+app.get('/trainstops', (req, res) => {
+});
+
+app.get('/strainfollow', (req, res) => {
 });
 
 app.listen(app.get('port'), () => {
