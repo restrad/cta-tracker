@@ -23,6 +23,8 @@ app.get('/busroutes', (req, res) => {
   });
 });
 
+app.get('/busroutes', bus.routes);
+
 app.get('/busroutedirections', bus.directions);
 
 app.get('/busroutestops', bus.routeStops);
