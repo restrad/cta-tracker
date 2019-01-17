@@ -1,6 +1,7 @@
 const request = require('request');
 const express = require('express');
 const train = require('./train');
+const bus = require('./bus');
 const app = express();
 
 app.use(express.static('public'));
@@ -22,17 +23,13 @@ app.get('/busroutes', (req, res) => {
   });
 });
 
-app.get('/busroutedirections', (req, res) => {
-});
+app.get('/busroutedirections', bus.directions);
 
-app.get('/busroutestops', (req, res) => {
-});
+app.get('/busroutestops', bus.routeStops);
 
-app.get('/busstoparrivals', (req, res) => {
-});
+app.get('/busstoparrivals', bus.stopArrivals);
 
-app.get('/busfollow', (req, res) => {
-});
+app.get('/busfollow', bus.follow);
 
 app.get('/trainstops', train.stops);
 
