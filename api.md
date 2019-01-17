@@ -6,8 +6,8 @@
 
 ### Bus
 
-* GET all bus routes => ```/busroutes/?route={routeId}```
-* GET bus route directions => ```/busroutedirections/?direction={direction}```
+* GET all bus routes => ```/busroutes```
+* GET bus route directions => ```/busroutedirections/?route={routeId}```
 * GET bus route stops => ```/busroutestops/?route={routeId}?direction={direction}```
 * GET bus stop arrivals => ```/bustoparrivals/?stop={stopId}```
 * GET current bus location and next stops (Follow bus) => ```/busfollow/?vehicle={vehicleId}```
