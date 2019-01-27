@@ -15,7 +15,7 @@ app.use((req, res, next) => {
   req.method === 'OPTIONS' ? res.sendStatus(200) : next();
 });
 
-app.get('/busroutes', (req, res) => {
+app.get('/test', (req, res) => {
   request('http://google.com', function (error, response, body) {
     console.log('error:', error); // Print the error if one occurred and handle it
     console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
