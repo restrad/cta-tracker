@@ -1,0 +1,13 @@
+{
+  "bus": {
+    "APIKey": "uExBP8b6nVp874MZXZAzW3UsT",
+    "baseURL": "http://www.ctabustracker.com/bustime/api/v2",
+    "sample": "http://www.ctabustracker.com/bustime/api/v2/getroutes?key=+ctaBusKey+&format=json"
+  },
+  "train": {
+    "APIKey": "1647d0e3c8494071aaa1555599e68284",
+    "baseURL": "http://lapi.transitchicago.com/api/1.0",
+    "stopArrivalsSample": "http://lapi.transitchicago.com/api/1.0/ttarrivals.aspx?key=+ctaTrainKey+&mapid=+mapId+&outputType=JSON",
+    "followSample": "http://lapi.transitchicago.com/api/1.0/ttfollow.aspx?key='+ctaTrainKey+'&runnumber='+runNumber+'&outputType=JSON"
+  }
+}

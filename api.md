@@ -8,7 +8,7 @@
 
 * GET all bus routes => ```/busroutes```
 * GET bus route directions => ```/busroutedirections/?route={routeId}```
-* GET bus route stops => ```/busroutestops/?route={routeId}?direction={direction}```
+* GET bus route stops => ```/busroutestops/?route={routeId}&direction={direction}```
 * GET bus stop arrivals => ```/busstoparrivals/?stop={stopId}```
 * GET current bus location and next stops (Follow bus) => ```/busfollow/?vehicle={vehicleId}```
 
