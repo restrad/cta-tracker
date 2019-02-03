@@ -9,6 +9,7 @@ import { RoutesComponent } from './routes/routes.component';
 import { StopsComponent } from './stops/stops.component';
 import { DirectionsComponent } from './directions/directions.component';
 import { FollowVehicleComponent } from './follow-vehicle/follow-vehicle.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FollowVehicleComponent } from './follow-vehicle/follow-vehicle.componen
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
