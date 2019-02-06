@@ -1,7 +1,7 @@
 const request = require('request');
 const config = require('./config.json');
 
-exports.stops = (req, res) => {
+exports.stopArrivals = (req, res) => {
   const mapId = req.query.stopId;
   const url = config.train.baseURL+'/ttarrivals.aspx?key='+config.train.APIKey+'&mapId='+mapId+'&outputType=JSON';
   commonRequest(url, res);
