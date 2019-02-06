@@ -36,6 +36,6 @@ function commonRequest(url, res) {
   request(url, (error, response, body) => {
     if (error)
       res.status(503).send('{"error": "Unable to reach CTA services."}');
-    res.send(body);
+    res.send(JSON.parse(body)['bustime-response']);
   });
 }
