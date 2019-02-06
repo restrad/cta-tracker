@@ -33,7 +33,7 @@ app.get('/busstoparrivals', bus.stopArrivals);
 
 app.get('/busfollow', bus.follow);
 
-app.get('/trainstops', train.stops);
+app.get('/trainstoparrivals', train.stopArrivals);
 
 app.get('/trainfollow', train.follow);
 
