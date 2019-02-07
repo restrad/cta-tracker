@@ -9,9 +9,17 @@ import { Observable } from 'rxjs';
 })
 export class BusService {
 
+  busRoutesURL: string;
+  busRouteDirectionsURL: string;
+  busRouteStopsURL: string;
   busArrivalsURL: string;
+  busFollowURL: string;
   constructor(private http: HttpClient) {
+    this.busRoutesURL = `${Config.baseURL}/busroutes`;
+    this.busRoutesURL = `${Config.baseURL}/busroutedirections`;
+    this.busRouteStopsURL = `${Config.baseURL}/busroutestops`;
     this.busArrivalsURL = `${Config.baseURL}/busstoparrivals`;
+    this.busFollowURL = `${Config.baseURL}/busfollow`;
   }
 
   arrivals(stopId: number): Observable<BustimeResponse> {
