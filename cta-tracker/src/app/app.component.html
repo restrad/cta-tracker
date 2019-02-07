@@ -1,7 +1,12 @@
-<router-outlet></router-outlet>
+<header>
+  CTArrivals
+</header>
+<div class="router-container">
+  <router-outlet></router-outlet>
+</div>
 <nav>
   <ul>
-    <li><a routerLink="/favorites">Favorites</a></li>
-    <li><a routerLink="/routes">Routes</a></li>
+    <li routerLinkActive="active"><a routerLink="/favorites">Favorites</a></li>
+    <li routerLinkActive="active"><a routerLink="/routes">Routes</a></li>
   </ul>
 </nav>
