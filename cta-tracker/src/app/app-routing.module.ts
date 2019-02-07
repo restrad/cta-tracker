@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'routes', component: RoutesComponent },
   { path: 'directions/:route', component: DirectionsComponent },
   { path: 'stops/:route/:direction', component: StopsComponent },
-  { path: 'arrivals/:route/:direction/:stopId', component: ArrivalsComponent },
+  { path: 'arrivals/:route/:direction/:stopId/:stopName', component: ArrivalsComponent },
   { path: 'arrivals/:route/:direction/:stopId/:vehicleId', component: FollowVehicleComponent },
   { path: 'favorites', component: FavoritesComponent }
 ];
