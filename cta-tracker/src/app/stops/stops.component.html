@@ -1,3 +1,6 @@
-<p>
-  stops works!
-</p>
+<ul class="cols-4">
+  <li *ngFor="let anError of error$ | async">{{anError.msg}}</li>
+  <li *ngFor="let stop of stops$ | async">
+    <a routerLink="/arrivals/{{forRoute}}/{{forDirection}}/{{stop.stpid}}/{{stop.stpnm}}">{{stop.stpnm}}</a>
+  </li>
+</ul>
