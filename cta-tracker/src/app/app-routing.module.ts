@@ -16,7 +16,8 @@ const routes: Routes = [
   { path: 'stops/:route/:direction', component: StopsComponent },
   { path: 'arrivals/:route/:direction/:stopId/:stopName', component: ArrivalsComponent },
   { path: 'arrivals/:route/:direction/:stopId/:vehicleId', component: FollowVehicleComponent },
-  { path: 'favorites', component: FavoritesComponent }
+  { path: 'favorites', component: FavoritesComponent },
+  { path: '**', redirectTo: '/routes' }
 ];
 
 @NgModule({
