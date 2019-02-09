@@ -1,8 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { BusService } from '../services/bus.service';
-import { Prd } from '../busResponse';
-import { of, Observable, interval, timer } from 'rxjs';
-import { map, tap, switchMap, startWith } from 'rxjs/operators';
+import { BustimeResponse, Prd, Error } from '../busResponse';
+import { of, Observable, timer } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-arrivals',
@@ -11,17 +12,36 @@ import { map, tap, switchMap, startWith } from 'rxjs/operators';
 })
 export class ArrivalsComponent implements OnInit {
 
-  @Input() vehicles: Observable<Prd[]>;
+  forRoute: string;
+  forDirection: string;
+  forStopId: number;
+  forStopName: string;
+  @Input() vehicles$: Observable<Prd[]>;
+  error$: Observable<Error[]>;
 
-  constructor(private busService: BusService) { }
+  constructor(private activatedRoute: ActivatedRoute,
+    private busService: BusService) { }
 
   ngOnInit() {
-    const stopId = 881;
-    timer(0, 30000).pipe(
-      switchMap(() => this.busService.arrivals(stopId))
-    ).subscribe(result => {
-      this.vehicles = of(result.prd);
+    this.activatedRoute.paramMap.pipe(switchMap(params => {
+      this.forRoute = params.get('route');
+      this.forDirection = params.get('direction');
+      this.forStopId = +params.get('stopId');
+      this.forStopName = params.get('stopName');
+      return this.busService.arrivals(this.forStopId);
+    })).subscribe((response: BustimeResponse) => {
+      if (response.error) {
+        this.error$ = of(response.error);
+      } else {
+        this.vehicles$ = of(response.prd);
+      }
     });
+    // const stopId = 881;
+    // timer(0, 30000).pipe(
+    //   switchMap(() => this.busService.arrivals(stopId))
+    // ).subscribe(result => {
+    //   this.vehicles$ = of(result.prd);
+    // });
   }
 
 }
