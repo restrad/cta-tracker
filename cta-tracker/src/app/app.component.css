@@ -49,6 +49,4 @@ nav ul li.active {
   background-color: var(--top-bottom-color-light);
 }
 
-.router-container {
-  padding: 16px;
-}
+
