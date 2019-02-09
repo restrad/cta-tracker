@@ -12,8 +12,10 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   /* --background: #02020E; */
   --top-bottom-color: hsl(222, 100%, 5%);
   /* --bottom-bar-color: rgba(8, 7, 28, 0.4); */
-  --bottom-bar-color: hsla(222, 100%, 5%, 0.4);
-  --top-bottom-color-light: hsla(222, 100%, 15%, 0.8);
+  --bottom-bar-color: hsla(222, 100%, 5%, 0.3);
+  --bottom-bar-color-reg: hsla(222, 100%, 5%, 0.7);
+  --top-bottom-color-light: hsla(222, 100%, 15%, 0.3);
+  --top-bottom-color-light-reg: hsla(222, 100%, 15%, 0.7);
   /* --top-bottom-color-light: rgba(32, 31, 50, 0.6); */
   /* --background: #08071C;
   --bottom-bar-color: #02020E; */
@@ -68,7 +70,10 @@ router-outlet {
 }
 
 app-favorites,
-app-routes {
+app-routes,
+app-directions,
+app-stops,
+app-arrivals {
   padding: 16px;
   display: grid;
   grid-column-gap: 16px;
