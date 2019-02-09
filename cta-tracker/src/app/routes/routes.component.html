@@ -1,4 +1,9 @@
-<p class="cols-4">routes</p>
+<ul class="cols-4">
+  <li *ngFor="let anError of error$ | async">{{anError.msg}}</li>
+  <li *ngFor="let route of routes$ | async">
+    <a routerLink="/directions/{{route.rt}}">{{route.rt}} {{route.rtnm}}</a>
+  </li>
+</ul>
 <!-- <<p>
   routes works! routes works! routes works! routes works! routes works!
 </p>
