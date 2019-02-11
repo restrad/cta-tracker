@@ -15,12 +15,14 @@ export class StopsComponent implements OnInit {
   forRoute: string;
   forDirection: string;
   stops$: Observable<Stop[]>;
+  STOPS: Stop[];
   error$: Observable<Error[]>;
 
   constructor(private activatedRoute: ActivatedRoute,
     private busService: BusService) { }
 
   ngOnInit() {
+    this.STOPS = [];
     this.activatedRoute.paramMap.pipe(switchMap(params => {
       this.forRoute = params.get('route');
       this.forDirection = params.get('direction');
@@ -30,8 +32,13 @@ export class StopsComponent implements OnInit {
         this.error$ = of(response.error);
       } else {
         this.stops$ = of(response.stops);
+        this.STOPS = response.stops;
       }
     });
   }
 
+  search(criteria: string) {
+    criteria = (criteria ? criteria.trim() : '').toLowerCase();
+    this.stops$ = of(this.STOPS.filter(stop => stop.stpnm.toLowerCase().includes(criteria)));
+  }
 }

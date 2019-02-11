@@ -1,126 +1,15 @@
+<section class="cols-4 search-form">
+  <input class="search-input" id="search-routes" #criteria (input)="search(criteria.value)" autocomplete="off" required/>
+  <label class="search-label" for="search-routes">Search Routes</label>
+</section>
 <ul class="cols-4">
   <li *ngFor="let anError of error$ | async">{{anError.msg}}</li>
-  <li *ngFor="let route of routes$ | async">
-    <a routerLink="/directions/{{route.rt}}">{{route.rt}} {{route.rtnm}}</a>
+  <li *ngFor="let route of routes$ | async" class="bus-route">
+    <a routerLink="/directions/{{route.rt}}">
+      <span class="bus-route-number-container">
+        <span class="bus-route-number">{{route.rt}}</span>
+      </span>
+      <span class="bus-route-name">{{route.rtnm}}</span>
+    </a>
   </li>
 </ul>
-<!-- <<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>
-<p>
-  routes works! routes works! routes works! routes works! routes works!
-</p>> -->

@@ -1,6 +1,13 @@
+<section class="cols-4 search-form">
+  <input class="search-input" id="search-stops" #criteria (input)="search(criteria.value)" autocomplete="off" required />
+  <label class="search-label" for="search-stops">Search Stops</label>
+</section>
+
 <ul class="cols-4">
   <li *ngFor="let anError of error$ | async">{{anError.msg}}</li>
-  <li *ngFor="let stop of stops$ | async">
-    <a routerLink="/arrivals/{{forRoute}}/{{forDirection}}/{{stop.stpid}}/{{stop.stpnm}}">{{stop.stpnm}}</a>
+  <li *ngFor="let stop of stops$ | async" class="bus-stop">
+    <a routerLink="/arrivals/{{forRoute}}/{{forDirection}}/{{stop.stpid}}/{{stop.stpnm}}">
+      {{stop.stpnm}}
+    </a>
   </li>
 </ul>
