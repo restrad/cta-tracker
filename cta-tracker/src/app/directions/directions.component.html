@@ -1,3 +1,6 @@
-<p>
-  directions works!
-</p>
+<ul class="cols-4">
+  <li *ngFor="let anError of error$ | async">{{anError.msg}} route {{anError.rt}}</li>
+  <li *ngFor="let direction of directions$ | async" class="bus-direction">
+    <a routerLink="/stops/{{forRoute}}/{{direction.dir}}">{{direction.dir}}</a>
+  </li>
+</ul>

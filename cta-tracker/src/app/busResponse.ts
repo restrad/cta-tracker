@@ -1,4 +1,4 @@
-interface Error {
+export interface Error {
   stpid: string;
   msg: string;
 }
@@ -22,18 +22,18 @@ export interface Prd {
   zone: string;
 }
 
-interface Stop {
+export interface Stop {
   stpid: string;
   stpnm: string;
   lat: number;
   lon: number;
 }
 
-interface Direction {
+export interface Direction {
   dir: string;
 }
 
-interface Route {
+export interface Route {
   rt: string;
   rtnm: string;
   rtclr: string;

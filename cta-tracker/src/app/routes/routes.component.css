@@ -1,0 +1,44 @@
+.bus-route {
+  height: 72px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  grid-column-gap: 16px;
+  font-weight: 900;
+}
+
+.bus-route-number-container {
+  height: 100%;
+  width: 100%;
+  padding: 8px 0;
+  /* color: #1463F4; */
+}
+
+.bus-route-number {
+  height: 100%;
+  width: 100%;
+  /* background-color: var(--secondary); */
+  /* background-color: #0A0D53; */
+  /* background: linear-gradient(-40deg,#02112c,#010713); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 22px;
+  /* border-bottom: 1px solid #1DE7DB; */
+  /* box-shadow: 0 0 5px #1463F4; */
+  color: #ffffff;
+}
+
+.bus-route-name {
+  height: 100%;
+  width: 100%;
+  display:flex;
+  align-items:center;
+}

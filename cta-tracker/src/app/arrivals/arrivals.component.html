@@ -1,3 +1,4 @@
-<ul>
-  <li *ngFor="let vehicle of vehicles | async">{{vehicle.prdctdn}}</li>
+<ul class="cols-4">
+  <li *ngFor="let anError of error$ | async">{{anError.msg}}</li>
+  <li *ngFor="let vehicle of vehicles$ | async">{{vehicle.prdctdn}}</li>
 </ul>
